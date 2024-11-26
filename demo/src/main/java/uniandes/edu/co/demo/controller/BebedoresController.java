@@ -21,7 +21,7 @@ public class BebedoresController {
     @GetMapping("/bebedores")
     public ResponseEntity<Collection<Bebedor>> obtenerTodosLosBebedores() {
         try {
-            // Llamar al método definido en el repositorio para obtener todos los registros
+            // Llamar al método definido en el repository para obtener todos los registros
             List<Bebedor> bebedores = bebedorRepository.buscarTodosLosBebedores();
 
             return ResponseEntity.ok(bebedores);

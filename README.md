@@ -55,11 +55,11 @@ Para que la aplicación funcione sin problemas desde cualquier ubicación, se re
 
 En este video se muestra cómo implementar las operaciones CRUD para la colección **Bares**. Aprenderás a:
 1. Crear, leer, actualizar y eliminar bares.
-2. Cómo estructurar el repositorio y controlador para manejar las operaciones.
+2. Cómo estructurar el repository y controlador para manejar las operaciones.
 3. Utilizar las **colecciones de Postman** para hacer pruebas.
 
 #### Colecciones de Postman:
-El archivo `MiniParranderosNoSQL.postman_collection.json` está ubicado en la **carpeta principal del repositorio**. Estas colecciones están listas para ser importadas en Postman y realizar pruebas de las operaciones definidas.
+El archivo `MiniParranderosNoSQL.postman_collection.json` está ubicado en la **carpeta principal del repository**. Estas colecciones están listas para ser importadas en Postman y realizar pruebas de las operaciones definidas.
 
 **Video**: 
 - **ImplementacionConsultasCRUD**
@@ -73,10 +73,10 @@ Este video aborda cómo implementar un **pipeline de agregación** en MongoDB pa
 > **Consulta avanzada**: Top 3 bebidas que son más servidas en los bares, teniendo en cuenta solo aquellos bares frecuentados por bebedores y bebidas preferidas por esos bebedores.
 
 #### Testing de la Consulta Avanzada:
-La colección de Postman también ha sido actualizada para incluir las pruebas de la consulta avanzada. Se encuentra en la carpeta principal del repositorio bajo el nombre `MiniParranderosNoSQL.postman_collection.json`.
+La colección de Postman también ha sido actualizada para incluir las pruebas de la consulta avanzada. Se encuentra en la carpeta principal del repository bajo el nombre `MiniParranderosNoSQL.postman_collection.json`.
 
 #### Documentación Adicional:
-En la carpeta principal del repositorio, también encontrarás el archivo **ConsultaAvanzadaExplicación.pdf**, que contiene una explicación detallada del pipeline y los pasos para ejecutarlo en la aplicación.
+En la carpeta principal del repository, también encontrarás el archivo **ConsultaAvanzadaExplicación.pdf**, que contiene una explicación detallada del pipeline y los pasos para ejecutarlo en la aplicación.
 
 **Video**: 
 - **ConsultasAvanzadas**
@@ -85,7 +85,7 @@ En la carpeta principal del repositorio, también encontrarás el archivo **Cons
 
 ## Tags del Proyecto
 
-Para facilitar la navegación por las diferentes etapas del proyecto, hemos creado **tags** en el repositorio. Si deseas acceder directamente a una etapa específica, simplemente selecciona el tag correspondiente.
+Para facilitar la navegación por las diferentes etapas del proyecto, hemos creado **tags** en el repository. Si deseas acceder directamente a una etapa específica, simplemente selecciona el tag correspondiente.
 
 ### Lista de Tags:
 1. **ConexionInicial**: Si deseas ver la configuración inicial de la conexión a MongoDB.
