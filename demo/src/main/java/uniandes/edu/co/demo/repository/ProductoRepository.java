@@ -1,7 +1,5 @@
 package uniandes.edu.co.demo.repository;
 
-import java.util.List;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.Update;
@@ -10,8 +8,6 @@ import uniandes.edu.co.demo.modelo.Especificaciones;
 import uniandes.edu.co.demo.modelo.Producto;
 
 public interface ProductoRepository  extends MongoRepository<Producto, Integer>{
-
-
 
     // Crear un nuevo bar
     @Query("{$insert: {  codigo_barras: ?0, nombre: ?1, costo_bodega: ?2, precio_venta: ?3, presentacion: ?4, cantidad_presentacion: ?5, unidad_medida: ?6, especificaciones: ?7, fecha_expiracion: ?8, categoria: ?9}}")

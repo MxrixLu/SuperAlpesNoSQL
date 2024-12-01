@@ -33,9 +33,9 @@ public class ProveedorController {
     }
 
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<String> actualizarProveedor(@PathVariable Integer id, @RequestBody Proveedor proveedor) {
+    public ResponseEntity<String> actualizarProveedor(@PathVariable String NIT, @RequestBody Proveedor proveedor) {
         try{
-            proveedorRepository.actualizarProveedor( proveedor.getNIT(), proveedor.getDireccion(), proveedor.getContacto(), proveedor.getProductos());
+            proveedorRepository.actualizarProveedor( NIT, proveedor.getDireccion(), proveedor.getContacto(), proveedor.getProductos());
             return new ResponseEntity<>("Proveedor actuualizado", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al actualizar el proveedor: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

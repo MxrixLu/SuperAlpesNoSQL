@@ -28,7 +28,7 @@ public class SucursalController {
     @PostMapping("/nuevo")
      public ResponseEntity<String> crearSucursal(@RequestBody Sucursal sucursal) {
         try {
-            sucursalRepository.save(sucursal);
+            sucursalRepository.insertarSucursal(sucursal.getNombre(), sucursal.getTelefono(), sucursal.getDireccion(), sucursal.getTamano(), sucursal.getCiudad(), sucursal.getBodegas());
             return new ResponseEntity<>("Sucursal creada exitosamente", HttpStatus.CREATED);
         } catch (Exception e) {;
             return new ResponseEntity<>("Error al crear la sucursal: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -61,7 +61,7 @@ public class SucursalController {
     }
 
     //Eliminar Bodega
-    @DeleteMapping("/{sucursalId}/bodega({bodegaId}/delete")
+    @DeleteMapping("/{sucursalId}/bodegas/{bodegaId}/delete")
     public ResponseEntity<String> eliminarBodega(@PathVariable("sucursalId") String sucursalId, @PathVariable("bodegaId") String bodegaId) {
         try {
             sucursalRepository.eliminarBodega(sucursalId, bodegaId);

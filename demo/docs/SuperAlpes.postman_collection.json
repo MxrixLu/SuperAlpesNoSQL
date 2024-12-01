@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "7db2fa86-9d51-47f1-bbf7-104db6854c14",
+		"name": "SuperAlpes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38331110"
+	},
+	"item": [
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Crear Categoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"codigo\": 1001,\r\n  \"nombre\": \"Electrónica\",\r\n  \"descripcion\": \"Categoría que agrupa productos relacionados con tecnología y gadgets.\",\r\n  \"caracteristicas_almacenamiento\": \"Requiere almacenamiento en espacios frescos y secos, evitando humedad y temperaturas extremas.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categorias/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Categoria Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categorias/\"perecederos\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"\"perecederos\""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Categoria Codigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoria/1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Crear Producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo_barras\": \"A123456789\",\r\n  \"nombre\": \"Laptop Dell XPS 13\",\r\n  \"costo_bodega\": 500.00,\r\n  \"precio_venta\": 800.00,\r\n  \"presentacion\": \"Unidad\",\r\n  \"cantidad_presentacion\": 1.0,\r\n  \"unidad_medida\": 1,\r\n  \"especificaciones\": {\r\n    \"volumen_empaque\": 300.3, \r\n    \"peso_empaque\": 20.0\r\n  },\r\n  \"fecha_expiracion\": \"2025-12-31\",\r\n  \"categoria\": \"Electrónica\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/productos/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Producto Codigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/\"A123456789\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"\"A123456789\""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Producto Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/producto/\"Laptop Dell XPS 13\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"\"Laptop Dell XPS 13\""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo_barras\": \"A123456789\",\r\n  \"nombre\": \"Laptop Dell XPS 13\",\r\n  \"costo_bodega\": 500.00,\r\n  \"precio_venta\": 10000.00,\r\n  \"presentacion\": \"Unidad\",\r\n  \"cantidad_presentacion\": 1.0,\r\n  \"unidad_medida\": 1,\r\n  \"especificaciones\": {\r\n    \"volumen_empaque\": 300.3, \r\n    \"peso_empaque\": 20.0\r\n  },\r\n  \"fecha_expiracion\": \"2025-12-31\",\r\n  \"categoria\": \"Electrónica\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/productos/actualizar/\"A123456789\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"actualizar",
+								"\"A123456789\""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedor",
+			"item": [
+				{
+					"name": "Crear Proveedor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"NIT\": \"9001234567\",\r\n  \"direccion\": \"Calle 123, Bogotá, Colombia\",\r\n  \"contacto\": {\r\n    \"nombre\": \"Juan Pérez\",\r\n    \"telefono\": \"3001234567\"\r\n  },\r\n  \"productos\": [\r\n    \"Producto1\",\r\n    \"Producto2\",\r\n    \"Producto3\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/proveedor/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proveedor",
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Proveedor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"direccion\": \"Calle 145, Sogamoso, Colombia\",\r\n  \"contacto\": {\r\n    \"nombre\": \"Juanita Pérez\",\r\n    \"telefono\": \"3001234567\"\r\n  },\r\n  \"productos\": [\r\n    \"Producto1\",\r\n    \"Producto2\",\r\n    \"Producto3\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/proveedores/actualizar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proveedores",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sucursal",
+			"item": [
+				{
+					"name": "Crear Sucursal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nombre\": \"Sucursal Centro\",\r\n  \"telefono\": \"3009876543\",\r\n  \"direccion\": \"Carrera 10 # 20-30, Bogotá, Colombia\",\r\n  \"tamano\": 500.5,\r\n  \"ciudad\": \"Bogotá\",\r\n  \"bodegas\": [\r\n    {\r\n      \"id\": 1,\r\n      \"nombre\": \"Bodega Principal\",\r\n      \"tamano\": 200.5\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"nombre\": \"Bodega Secundaria\",\r\n      \"tamano\": 150.0\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sucursales/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sucursales",
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bodega",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"id\": 5,\r\n      \"nombre\": \"Bodega Merca2\",\r\n      \"tamano\": 500000.5\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sucursales/1/bodega/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sucursales",
+								"1",
+								"bodega",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Bodega",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sucursales/1/bodegas/2/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sucursales",
+								"1",
+								"bodegas",
+								"2",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

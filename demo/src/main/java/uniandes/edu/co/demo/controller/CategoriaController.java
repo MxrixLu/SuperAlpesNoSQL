@@ -34,7 +34,7 @@ public class CategoriaController {
     @PostMapping("/nuevo")
     public ResponseEntity<String> crearCategoria(@RequestBody Categoria categoria) {
         try{
-            categoriaRepository.insertarCategoria(categoria.getId(), categoria.getCodigo(), categoria.getNombre(), categoria.getDescripcion(), categoria.getCaracteristicas_almacenamiento());
+            categoriaRepository.insertarCategoria( categoria.getCodigo(), categoria.getNombre(), categoria.getDescripcion(), categoria.getCaracteristicas_almacenamiento());
             return ResponseEntity.ok("Categoria creada exitosamente");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error al crear la categoria: " + e.getMessage());
@@ -42,7 +42,7 @@ public class CategoriaController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<Categoria>> obetnerCategorias() {
+    public ResponseEntity<List<Categoria>> obetenerCategorias() {
         try{
             List<Categoria> categorias = categoriaRepository.obtenerCategorias();
             return new ResponseEntity<>(categorias, HttpStatus.OK);
