@@ -1,5 +1,9 @@
 package uniandes.edu.co.demo.controller;
 
+import java.util.Date;
+import java.util.List;
+
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.demo.modelo.Producto;
 import uniandes.edu.co.demo.repository.ProductoRepository;
+import uniandes.edu.co.demo.repository.ProductoRepositoryCustom;
 
 @RestController
 @RequestMapping("/productos")
@@ -20,6 +25,9 @@ public class ProductoController {
 
     @Autowired
     private ProductoRepository productoRepository;
+
+    @Autowired
+    private ProductoRepositoryCustom productoRepositoryCustome;
 
     @PostMapping("/nuevo")
     public ResponseEntity<String> crearProducto(@RequestBody Producto producto) {
@@ -58,6 +66,16 @@ public class ProductoController {
             return new ResponseEntity<>(productoActualizado, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/caracteristicas")
+    public ResponseEntity<List<Document>> obtenerProductosSegunCaracteristicas(Double precioInicial, Double precioFinal, Date fechaVencimientoMax, String sucursal, String categoria) {
+        try{
+            List<Document> productos = productoRepositoryCustome.obtenerProductosSegunCaracterisitas(precioInicial, precioFinal, fechaVencimientoMax, sucursal, categoria);
+            return ResponseEntity.ok(productos);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 

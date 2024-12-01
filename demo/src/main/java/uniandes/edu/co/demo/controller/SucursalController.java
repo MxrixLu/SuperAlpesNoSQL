@@ -2,6 +2,7 @@ package uniandes.edu.co.demo.controller;
 
 import java.util.List;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
@@ -17,12 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 import uniandes.edu.co.demo.modelo.Bodega;
 import uniandes.edu.co.demo.modelo.Sucursal;
 import uniandes.edu.co.demo.repository.SucursalRepository;
+import uniandes.edu.co.demo.repository.SucursalRepositoryCustom;
 @RestController
 @RequestMapping("/sucursales")
 public class SucursalController {
 
     @Autowired
     private SucursalRepository sucursalRepository;
+
+    @Autowired
+    private SucursalRepositoryCustom sucursalRepositoryCustom;
 
     //Crear sucursal
     @PostMapping("/nuevo")
@@ -71,5 +76,14 @@ public class SucursalController {
         }
     }
 
+    @GetMapping("/caracteristicas")
+    public ResponseEntity<List<Document>> obtenerInventarioSucursales(String nombreSucursal) {
+        try {
+            List<Document> sucursales = sucursalRepositoryCustom.inventarioSucursal(nombreSucursal);
+            return new ResponseEntity<>(sucursales, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }
