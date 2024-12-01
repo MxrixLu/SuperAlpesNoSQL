@@ -25,7 +25,6 @@ public class BodegaController {
     private BodegaRepository bodegaRepository;
 
     
-    // Consultar todos los bodegas
 
     
 }

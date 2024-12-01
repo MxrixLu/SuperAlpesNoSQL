@@ -23,7 +23,7 @@ public class Producto {
     private int unidad_medida;
     private Especificaciones especificaciones;
     private String fecha_expiracion; 
-    private String categoria_id;
+    private String categoria;
 
     public Producto(int id, String codigo_barras, String nombre, Double costo_bodega, Double precio_venta, String presentacion,
             Double cantidad_presentacion, int unidad_medida, Especificaciones especificaciones,
@@ -38,7 +38,7 @@ public class Producto {
         this.cantidad_presentacion = cantidad_presentacion;
         this.unidad_medida = unidad_medida;
         this.fecha_expiracion = fecha_expiracion;
-        this.categoria_id = categoria;
+        this.categoria = categoria;
     }
 
     public Producto() 
@@ -127,11 +127,19 @@ public class Producto {
     }
 
     public String getString() {
-        return categoria_id;
+        return categoria;
     }
 
     public void setString(String categoria) {
-        this.categoria_id = categoria;
+        this.categoria = categoria;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
 

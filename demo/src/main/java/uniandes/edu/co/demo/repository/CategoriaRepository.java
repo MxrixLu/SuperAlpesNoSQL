@@ -11,24 +11,17 @@ import uniandes.edu.co.demo.modelo.Categoria;
 public interface CategoriaRepository extends MongoRepository<Categoria, Integer> {
 
     
-    @Query(value = "{}", fields = "{ }")
-    List<Categoria> buscarTodosLosCategoriaes();
-
-    // Consultar bar por su ID
-    @Query("")
-    List<Categoria> buscarPorId(int id);
 
     // Crear un nuevo bar
-    @Query("")
-    void insertarCategoria();
+    @Query("{$insert: {codigo: ?0, nombre: ?1, descripcion: ?2, caracteristicas_almacenamiento: ?3}}")
+    void insertarCategoria(int id, int codigo, String nombre, String descripcion, String caracteristicas_almacenamiento);
 
-    // Actualizar un bar por su ID
-    @Query("")
-    @Update("")
-    void actualizarCategoria();
+    @Query(value = "{}")
+    List<Categoria> obtenerCategorias();
 
-    // Eliminar un bar por su ID
-    @Query(value = "", delete = true)
-    void eliminarCategoriaPorId(int id);
+    @Query(value = "{nombre: ?0}")
+    Categoria obtenerCategoriaPorNombre(String nombre);
 
+    @Query(value = "{codigo: ?0}")
+    Categoria obtenerCategoriaPorCodigo(int codigo);
 }

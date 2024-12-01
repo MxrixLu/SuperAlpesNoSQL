@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.ToString;
 
-@Document(collection="sucursales")
+
 @ToString
 public class Sucursal {
 

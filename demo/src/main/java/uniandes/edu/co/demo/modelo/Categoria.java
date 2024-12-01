@@ -59,11 +59,11 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public String getCaracteristicasAlmacenamiento() {
+    public String getCaracteristicas_almacenamiento() {
         return caracteristicas_almacenamiento;
     }
 
-    public void setCaracteristicasAlmacenamiento(String caracteristicas_almacenamiento) {
+    public void setCaracteristicas_almacenamiento(String caracteristicas_almacenamiento) {
         this.caracteristicas_almacenamiento = caracteristicas_almacenamiento;
     }
 

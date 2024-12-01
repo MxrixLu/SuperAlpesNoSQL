@@ -18,12 +18,12 @@ public class OrdenCompra {
     private Date fecha_entrega; 
     private Double precio_acordado;
     private String estado; 
-    private String sucursal_id;
-    private String proveedor_id;
+    private int sucursal_id;
+    private int proveedor_id;
     private List<DetalleOrdenCompra> detallesOrdenCompra;
 
     public OrdenCompra(int id, Date fechaEsperadaEntrega, Double precio_acordado, String estado, Date fecha_creacion,
-    String sucursal, String proveedor) {
+    int sucursal, int proveedor) {
         this.id = id;
         this.fecha_entrega = fechaEsperadaEntrega;
         this.precio_acordado = precio_acordado;
@@ -76,21 +76,27 @@ public class OrdenCompra {
         this.fecha_creacion = fecha_creacion;
     }
 
-    public String getSucursal() {
+    public int getSucursal() {
         return sucursal_id;
     }
 
-    public void setSucursal(String sucursal) {
+    public void setSucursal(int sucursal) {
         this.sucursal_id = sucursal;
     }
 
-    public String getProveedor() {
+    public int getProveedor() {
         return proveedor_id;
     }
 
-    public void setProveedor(String proveedor) {
+    public void setProveedor(int proveedor) {
         this.proveedor_id = proveedor;
     }
 
+    public List<DetalleOrdenCompra> getDetallesOrdenCompra() {
+        return detallesOrdenCompra;
+    }
 
+    public void setDetallesOrdenCompra(List<DetalleOrdenCompra> detallesOrdenCompra) {
+        this.detallesOrdenCompra = detallesOrdenCompra;
+    }
 }

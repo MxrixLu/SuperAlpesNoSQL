@@ -1,36 +1,42 @@
 package uniandes.edu.co.demo.repository;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.Update;
 
+import uniandes.edu.co.demo.modelo.DetalleOrdenCompra;
 import uniandes.edu.co.demo.modelo.OrdenCompra;
 
 public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, Integer> {
 
-    
-    
-    @Query(value = "{}", fields = "{ }")
-    List<OrdenCompra> buscarTodasLasOrdenCompras();
-
-    // Consultar bar por su ID
-    @Query("")
-    List<OrdenCompra> buscarPorId(int id);
-
     // Crear un nuevo bar
-    @Query("")
-    void insertarOrdenCompra();
 
-    // Actualizar un bar por su ID
-    @Query("")
-    @Update("")
-    void actualizarOrdenCompra();
+    default void insertarOrden(int sucursalId, int proveedorId, Date fecha_entrega, List<Integer> productos, List<Integer> cantidades, List<Integer> precios){
+        OrdenCompra orden = new OrdenCompra();
+        orden.setSucursal(sucursalId);
+        orden.setProveedor(proveedorId);
+        orden.setFechaEsperadaEntrega(fecha_entrega);
+        orden.setEstado("VIGENTE");
+        orden.setFechaCreacion(new Date());
+        List<DetalleOrdenCompra> detalles = new ArrayList<>();
+        DetalleOrdenCompra detalleOrden = new DetalleOrdenCompra();
+        for(int i = 0; i < productos.size(); i++){
+            detalleOrden.setProductoId(productos.get(i));
+            detalleOrden.setCantidad(cantidades.get(i));
+            detalleOrden.setPrecioUnitario(precios.get(i));
+            detalles.add(detalleOrden);
+        }
+        orden.setDetallesOrdenCompra(detalles);
+        save(orden);
+    }
 
-    // Eliminar un bar por su ID
-    @Query(value = "", delete = true)
-    void eliminarOrdenCompraPorId(int id);
 
+    // Encontrar por id
+    @Query("{id: ?0}")
+    OrdenCompra obtenerOrdenPorId(int id);
     
 }

@@ -6,30 +6,19 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.Update;
 
+import uniandes.edu.co.demo.modelo.Contacto;
 import uniandes.edu.co.demo.modelo.Proveedor;
 
 public interface ProveedorRepository extends MongoRepository<Proveedor, Integer> {
 
     
-    
-    @Query(value = "{}", fields = "{ }")
-    List<Proveedor> buscarTodosLosProveedores();
-
-    // Consultar bar por su ID
-    @Query("")
-    List<Proveedor> buscarPorId(int id);
-
     // Crear un nuevo bar
-    @Query("")
-    void insertarProveedor();
+    @Query("{$insert: { NIT: ?0, direccion: ?1, contacto: ?2, productos: ?3}}")
+    void insertarProveedor(String NIT, String direccion, Contacto contacto, List<String> productos);
 
     // Actualizar un bar por su ID
-    @Query("")
-    @Update("")
-    void actualizarProveedor();
-
-    // Eliminar un bar por su ID
-    @Query(value = "", delete = true)
-    void eliminarProveedorPorId(int id);
+    @Query("{NIT: ?0}")
+    @Update("{$set: { direccion: ?1, contacto: ?2, productos: ?3}}")
+    void actualizarProveedor( String NIT, String direccion, Contacto contacto, List<String> productos);
 
 }
