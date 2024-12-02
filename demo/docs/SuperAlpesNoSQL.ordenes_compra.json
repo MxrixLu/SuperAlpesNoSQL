@@ -1,0 +1,125 @@
+[{
+  "_id": 1,
+  "fecha_creacion": {
+    "$date": "2024-01-01T00:00:00.000Z"
+  },
+  "fecha_entrega": {
+    "$date": "2024-01-15T00:00:00.000Z"
+  },
+  "precio_acordado": 50000,
+  "estado": "VIGENTE",
+  "sucursal_id": 101,
+  "proveedor_id": 201,
+  "detallesOrdenCompra": [
+    {
+      "productoId": 1001,
+      "cantidad": 50,
+      "precioUnitario": 1000
+    },
+    {
+      "productoId": 1002,
+      "cantidad": 20,
+      "precioUnitario": 1500
+    }
+  ]
+},
+{
+  "_id": 2,
+  "fecha_creacion": {
+    "$date": "2024-01-10T00:00:00.000Z"
+  },
+  "fecha_entrega": {
+    "$date": "2024-01-20T00:00:00.000Z"
+  },
+  "precio_acordado": 30000,
+  "estado": "VIGENTE",
+  "sucursal_id": 102,
+  "proveedor_id": 202,
+  "detallesOrdenCompra": [
+    {
+      "productoId": 1003,
+      "cantidad": 10,
+      "precioUnitario": 3000
+    },
+    {
+      "productoId": 1004,
+      "cantidad": 5,
+      "precioUnitario": 4000
+    }
+  ]
+},
+{
+  "_id": 3,
+  "fecha_creacion": {
+    "$date": "2024-01-15T00:00:00.000Z"
+  },
+  "fecha_entrega": {
+    "$date": "2024-01-25T00:00:00.000Z"
+  },
+  "precio_acordado": 45000,
+  "estado": "ENTREGADO",
+  "sucursal_id": 103,
+  "proveedor_id": 203,
+  "detallesOrdenCompra": [
+    {
+      "productoId": 1005,
+      "cantidad": 15,
+      "precioUnitario": 2000
+    },
+    {
+      "productoId": 1006,
+      "cantidad": 25,
+      "precioUnitario": 2500
+    }
+  ]
+},
+{
+  "_id": 4,
+  "fecha_creacion": {
+    "$date": "2024-02-01T00:00:00.000Z"
+  },
+  "fecha_entrega": {
+    "$date": "2024-02-10T00:00:00.000Z"
+  },
+  "precio_acordado": 60000,
+  "estado": "VIGENTE",
+  "sucursal_id": 104,
+  "proveedor_id": 204,
+  "detallesOrdenCompra": [
+    {
+      "productoId": 1007,
+      "cantidad": 30,
+      "precioUnitario": 1500
+    },
+    {
+      "productoId": 1008,
+      "cantidad": 40,
+      "precioUnitario": 1800
+    }
+  ]
+},
+{
+  "_id": 5,
+  "fecha_creacion": {
+    "$date": "2024-02-05T00:00:00.000Z"
+  },
+  "fecha_entrega": {
+    "$date": "2024-02-15T00:00:00.000Z"
+  },
+  "precio_acordado": 70000,
+  "estado": "ANULADO",
+  "sucursal_id": 105,
+  "proveedor_id": 205,
+  "detallesOrdenCompra": [
+    {
+      "productoId": 1009,
+      "cantidad": 20,
+      "precioUnitario": 2500
+    },
+    {
+      "productoId": 1010,
+      "cantidad": 10,
+      "precioUnitario": 3000
+    }
+  ]
+}]
