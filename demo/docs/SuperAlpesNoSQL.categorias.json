@@ -1,0 +1,42 @@
+[{
+  "_id": 1,
+  "codigo": "C001",
+  "nombre": "Alimentos",
+  "descripcion": "Productos destinados al consumo humano.",
+  "caracteristica_almacenamiento": "Mantener en lugar fresco y seco."
+},
+{
+  "_id": 2,
+  "codigo": "C002",
+  "nombre": "Electrodomésticos",
+  "descripcion": "Aparatos eléctricos para el hogar.",
+  "caracteristica_almacenamiento": "Almacenar en espacios cerrados y secos."
+},
+{
+  "_id": 3,
+  "codigo": "C003",
+  "nombre": "Bebidas",
+  "descripcion": "Líquidos para consumo humano.",
+  "caracteristica_almacenamiento": "Refrigerar si es necesario."
+},
+{
+  "_id": 4,
+  "codigo": "C004",
+  "nombre": "Muebles",
+  "descripcion": "Mobiliario para el hogar o la oficina.",
+  "caracteristica_almacenamiento": "Evitar exposición directa al sol."
+},
+{
+  "_id": 5,
+  "codigo": "C005",
+  "nombre": "Ropa",
+  "descripcion": "Prendas de vestir.",
+  "caracteristica_almacenamiento": "Guardar en lugares ventilados."
+},
+{
+  "_id": 0,
+  "codigo": "D001",
+  "nombre": "Comida Gats",
+  "descripcion": "Productos destinados al consumo gatuno.",
+  "_class": "uniandes.edu.co.demo.modelo.Categoria"
+}]

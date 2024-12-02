@@ -1,0 +1,84 @@
+[{
+  "_id": 1,
+  "NIT": "900123456-7",
+  "direccion": "Calle 123 #45-67, Bogotá",
+  "contacto": {
+    "nombre": "Carlos Pérez",
+    "telefono": "3101234567"
+  },
+  "productos": [
+    "Agua Embotellada",
+    "Azúcar",
+    "Aceite"
+  ]
+},
+{
+  "_id": 2,
+  "NIT": "800987654-2",
+  "direccion": "Carrera 10 #20-30, Medellín",
+  "contacto": {
+    "nombre": "María Gómez",
+    "telefono": "3119876543"
+  },
+  "productos": [
+    "Agua Embotellada",
+    "Agua Embotellada",
+    "Agua Embotellada"
+  ]
+},
+{
+  "_id": 3,
+  "NIT": "700456123-8",
+  "direccion": "Avenida Principal #12-34, Cali",
+  "contacto": {
+    "nombre": "Juan Rodríguez",
+    "telefono": "3124567890"
+  },
+  "productos": [
+    "Agua Embotellada",
+    "Agua Embotellada",
+    "Agua Embotellada"
+  ]
+},
+{
+  "_id": 4,
+  "NIT": "600321654-3",
+  "direccion": "Diagonal 45 #67-89, Barranquilla",
+  "contacto": {
+    "nombre": "Ana Martínez",
+    "telefono": "3136549876"
+  },
+  "productos": [
+    "Sillas",
+    "Silla de Oficina",
+    "Escritorios"
+  ]
+},
+{
+  "_id": 5,
+  "NIT": "500789123-1",
+  "direccion": "Transversal 30 #40-50, Cartagena",
+  "contacto": {
+    "nombre": "Pedro López",
+    "telefono": "3147891234"
+  },
+  "productos": [
+    "Camisas",
+    "Pantalones",
+    "Zapatos"
+  ]
+},
+{
+  "_id": 0,
+  "direccion": "Calle 123, Bogotá, Colombia",
+  "contacto": {
+    "nombre": "Juan Pérez",
+    "telefono": "3001234567"
+  },
+  "productos": [
+    "Producto1",
+    "Producto2",
+    "Producto3"
+  ],
+  "_class": "uniandes.edu.co.demo.modelo.Proveedor"
+}]

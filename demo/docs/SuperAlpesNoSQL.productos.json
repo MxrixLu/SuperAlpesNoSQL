@@ -1,0 +1,96 @@
+[{
+  "_id": 1,
+  "nombre": "Leche Entera",
+  "costo_base": 15,
+  "precio_venta": 20,
+  "presentacion": "1L",
+  "cantidad": 500,
+  "unidad_medida": "Litro",
+  "fecha_expiracion": {
+    "$date": "2024-12-31T00:00:00.000Z"
+  },
+  "codigo": "P001",
+  "especificacion_empaque": {
+    "volumen": "1L",
+    "peso": "1kg"
+  },
+  "categoria_id": 1
+},
+{
+  "_id": 2,
+  "nombre": "Televisor LED",
+  "costo_base": 5000,
+  "precio_venta": 7000,
+  "presentacion": "Caja",
+  "cantidad": 50,
+  "unidad_medida": "Unidad",
+  "fecha_expiracion": null,
+  "codigo": "P002",
+  "especificacion_empaque": {
+    "volumen": "0.5m³",
+    "peso": "8kg"
+  },
+  "categoria_id": 2
+},
+{
+  "_id": 3,
+  "nombre": "Agua",
+  "costo_base": 5,
+  "precio_venta": 10,
+  "presentacion": "500ml",
+  "cantidad": 1000,
+  "unidad_medida": "Litro",
+  "fecha_expiracion": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  },
+  "codigo": "P003",
+  "especificacion_empaque": {
+    "volumen": "500ml",
+    "peso": "0.5kg"
+  },
+  "categoria_id": 3
+},
+{
+  "_id": 4,
+  "nombre": "Silla de Oficina",
+  "costo_base": 800,
+  "precio_venta": 1200,
+  "presentacion": "Unidad",
+  "cantidad": 100,
+  "unidad_medida": "Unidad",
+  "fecha_expiracion": null,
+  "codigo": "P004",
+  "especificacion_empaque": {
+    "volumen": "0.1m³",
+    "peso": "5kg"
+  },
+  "categoria_id": 4
+},
+{
+  "_id": 5,
+  "nombre": "Camisa Casual",
+  "costo_base": 200,
+  "precio_venta": 350,
+  "presentacion": "Unidad",
+  "cantidad": 300,
+  "unidad_medida": "Unidad",
+  "fecha_expiracion": null,
+  "codigo": "P005",
+  "especificacion_empaque": {
+    "volumen": "0.003m³",
+    "peso": "0.3kg"
+  },
+  "categoria_id": 5
+},
+{
+  "_id": 0,
+  "nombre": "Laptop Dell XPS 13",
+  "presentacion": "Unidad",
+  "unidad_medida": 0,
+  "especificaciones": {
+    "volumen_empaque": 300.3,
+    "peso_empaque": 20
+  },
+  "categoria": "Electrónica",
+  "_class": "uniandes.edu.co.demo.modelo.Producto"
+}]
