@@ -1,0 +1,80 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      '_id',
+      'fecha_creacion',
+      'fecha_entrega',
+      'precio_acordado',
+      'estado',
+      'sucursal_id',
+      'proveedor_id',
+      'detallesOrdenCompra'
+    ],
+    properties: {
+      _id: {
+        bsonType: 'number',
+        description: 'Debe ser un número único que identifica la orden de compra'
+      },
+      fecha_creacion: {
+        bsonType: 'date',
+        description: 'Debe ser una fecha válida que indica la creación de la orden'
+      },
+      fecha_entrega: {
+        bsonType: 'date',
+        description: 'Debe ser una fecha válida que indica la entrega estimada'
+      },
+      precio_acordado: {
+        bsonType: 'number',
+        minimum: 0,
+        description: 'Debe ser un número positivo que representa el precio total acordado'
+      },
+      estado: {
+        bsonType: 'string',
+        'enum': [
+          'VIGENTE',
+          'ENTREGADA',
+          'ANULADA'
+        ],
+        description: 'Estado actual de la orden de compra'
+      },
+      sucursal_id: {
+        bsonType: 'number',
+        description: 'Debe ser un identificador válido de la sucursal relacionada'
+      },
+      proveedor_id: {
+        bsonType: 'number',
+        description: 'Debe ser un identificador válido del proveedor relacionado'
+      },
+      detallesOrdenCompra: {
+        bsonType: 'array',
+        minItems: 1,
+        items: {
+          bsonType: 'object',
+          required: [
+            'productoId',
+            'cantidad',
+            'precioUnitario'
+          ],
+          properties: {
+            productoId: {
+              bsonType: 'number',
+              description: 'Debe ser un identificador válido del producto'
+            },
+            cantidad: {
+              bsonType: 'number',
+              minimum: 1,
+              description: 'Debe ser un número positivo que indica la cantidad solicitada'
+            },
+            precioUnitario: {
+              bsonType: 'number',
+              minimum: 0,
+              description: 'Debe ser un número positivo que representa el precio unitario del producto'
+            }
+          }
+        },
+        description: 'Lista de productos en la orden de compra'
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      '_id',
+      'codigo',
+      'nombre',
+      'descripcion',
+      'caracteristicas_almacenamiento'
+    ],
+    properties: {
+      _id: {
+        bsonType: 'objectId',
+        description: 'Debe ser un ObjectId único'
+      },
+      codigo: {
+        bsonType: 'string',
+        description: 'Debe ser un texto único'
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      descripcion: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      caracteristicas_almacenamiento: {
+        bsonType: 'string',
+        description: 'Especifica cómo almacenar los productos'
+      }
+    }
+  }
+}

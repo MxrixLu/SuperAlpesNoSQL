@@ -1,0 +1,46 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      '_id',
+      'nombre',
+      'precio_unitario',
+      'categoria_id',
+      'especificacion_empaque'
+    ],
+    properties: {
+      _id: {
+        bsonType: 'objectId',
+        description: 'Debe ser un ObjectId único'
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      precio_unitario: {
+        bsonType: 'number',
+        minimum: 0,
+        description: 'Debe ser un número positivo'
+      },
+      categoria_id: {
+        bsonType: 'objectId',
+        description: 'Debe referenciar a una categoría válida'
+      },
+      especificacion_empaque: {
+        bsonType: 'object',
+        required: [
+          'volumen',
+          'peso'
+        ],
+        properties: {
+          volumen: {
+            bsonType: 'number',
+            description: 'Volumen del empaque en cm3'
+          },
+          peso: {
+            bsonType: 'number',
+            description: 'Peso del empaque en gramos'
+          }
+        }
+      }
+    }
