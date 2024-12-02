@@ -1,0 +1,61 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      '_id',
+      'nombre',
+      'ciudad',
+      'direccion',
+      'telefono',
+      'bodegas'
+    ],
+    properties: {
+      _id: {
+        bsonType: 'objectId',
+        description: 'Debe ser un ObjectId único'
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      ciudad: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      direccion: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      telefono: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      bodegas: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'object',
+          required: [
+            'bodega_id',
+            'nombre',
+            'tamaño'
+          ],
+          properties: {
+            bodega_id: {
+              bsonType: 'objectId',
+              description: 'Debe ser un ObjectId único'
+            },
+            nombre: {
+              bsonType: 'string',
+              description: 'Debe ser un texto'
+            },
+            'tamaño': {
+              bsonType: 'number',
+              minimum: 0,
+              description: 'Debe ser un número positivo'
+            }
+          }
+        }
+      }
+    }
+  }
+}

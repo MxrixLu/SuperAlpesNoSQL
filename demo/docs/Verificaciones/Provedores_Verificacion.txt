@@ -1,0 +1,55 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      '_id',
+      'nit',
+      'nombre',
+      'direccion',
+      'contacto',
+      'productos_suministrados'
+    ],
+    properties: {
+      _id: {
+        bsonType: 'objectId',
+        description: 'Debe ser un ObjectId único'
+      },
+      nit: {
+        bsonType: 'string',
+        description: 'Debe ser un texto único'
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      direccion: {
+        bsonType: 'string',
+        description: 'Debe ser un texto'
+      },
+      contacto: {
+        bsonType: 'object',
+        required: [
+          'nombre',
+          'telefono'
+        ],
+        properties: {
+          nombre: {
+            bsonType: 'string',
+            description: 'Debe ser un texto'
+          },
+          telefono: {
+            bsonType: 'string',
+            description: 'Debe ser un texto'
+          }
+        }
+      },
+      productos_suministrados: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'objectId',
+          description: 'Debe ser un ObjectId referenciando productos'
+        }
+      }
+    }
+  }
+}
