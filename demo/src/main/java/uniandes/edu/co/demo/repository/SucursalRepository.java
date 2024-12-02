@@ -5,15 +5,23 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.Update;
+import org.springframework.stereotype.Repository;
 
 import uniandes.edu.co.demo.modelo.Bodega;
 import uniandes.edu.co.demo.modelo.Sucursal;
 
+@Repository
 public interface SucursalRepository extends MongoRepository<Sucursal, Integer> {
 
-    //Crear una nueva sucursal
-    @Query("{ $insert : { nombre: ?0, telefono: ?1, direccion: ?2, tamano: ?3, ciudad: ?4, bodegas: ?5}}")
-    void insertarSucursal( String nombre, String telefono, String direccion, Double tamano, String ciudad, List<Bodega> bodegas);
+    default void insertarSucursal(String nombre, String direccion, String telefono, String ciudad, List<Bodega> bodegas){
+        Sucursal sucursal = new Sucursal();
+        sucursal.setNombre(nombre);
+        sucursal.setDireccion(direccion);
+        sucursal.setTelefono(telefono);
+        sucursal.setCiudad(ciudad);
+        sucursal.setBodegas(bodegas);
+        save(sucursal);
+    }
     //Encontrar por nombre 
     @Query("{ 'nombre': ?0 }")
     Sucursal encontrarPorNombre(String nombre);

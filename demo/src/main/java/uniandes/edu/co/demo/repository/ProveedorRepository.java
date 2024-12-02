@@ -5,17 +5,25 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.Update;
+import org.springframework.stereotype.Repository;
 
 import uniandes.edu.co.demo.modelo.Contacto;
 import uniandes.edu.co.demo.modelo.Proveedor;
 
+@Repository
 public interface ProveedorRepository extends MongoRepository<Proveedor, Integer> {
 
     
     // Crear un nuevo bar
-    @Query("{$insert: { NIT: ?0, direccion: ?1, contacto: ?2, productos: ?3}}")
-    void insertarProveedor(String NIT, String direccion, Contacto contacto, List<String> productos);
-
+    default void insertarProveedor(int id, String NIT, String direccion, Contacto contacto, List<String> productos){
+        Proveedor proveedor = new Proveedor();
+        proveedor.setId(id);
+        proveedor.setNIT(NIT);
+        proveedor.setDireccion(direccion);
+        proveedor.setContacto(contacto);
+        proveedor.setProductos(productos);
+        save(proveedor);
+    }
     // Actualizar un bar por su ID
     @Query("{NIT: ?0}")
     @Update("{$set: { direccion: ?1, contacto: ?2, productos: ?3}}")

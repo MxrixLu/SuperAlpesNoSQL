@@ -20,13 +20,13 @@ public class Producto {
     private Double precio_venta; 
     private String presentacion; 
     private Double cantidad_presentacion; 
-    private int unidad_medida;
+    private String unidad_medida;
     private Especificaciones especificaciones;
     private String fecha_expiracion; 
     private String categoria;
 
     public Producto(int id, String codigo_barras, String nombre, Double costo_bodega, Double precio_venta, String presentacion,
-            Double cantidad_presentacion, int unidad_medida, Especificaciones especificaciones,
+            Double cantidad_presentacion, String unidad_medida, Especificaciones especificaciones,
             String fecha_expiracion, String categoria) {
         this.id = id;
         this.codigo_barras = codigo_barras;
@@ -109,11 +109,11 @@ public class Producto {
         this.cantidad_presentacion = cantidad_presentacion;
     }
 
-    public int getUnidadMedida() {
+    public String getUnidadMedida() {
         return unidad_medida;
     }
 
-    public void setUnidadMedida(int unidad_medida) {
+    public void setUnidadMedida(String unidad_medida) {
         this.unidad_medida = unidad_medida;
     }
 
