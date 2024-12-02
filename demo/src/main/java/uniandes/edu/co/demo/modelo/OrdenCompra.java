@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import org.bson.types.ObjectId;
+
 import lombok.ToString;
 
 @Document(collection="ordenes_compra")
@@ -13,7 +15,7 @@ public class OrdenCompra {
 
     
     @Id
-    private int id;
+    private ObjectId id;
     private Date fecha_creacion;
     private Date fecha_entrega; 
     private Double precio_acordado;
@@ -22,7 +24,7 @@ public class OrdenCompra {
     private int proveedor_id;
     private List<DetalleOrdenCompra> detallesOrdenCompra;
 
-    public OrdenCompra(int id, Date fechaEsperadaEntrega, Double precio_acordado, String estado, Date fecha_creacion,
+    public OrdenCompra(ObjectId id, Date fechaEsperadaEntrega, Double precio_acordado, String estado, Date fecha_creacion,
     int sucursal, int proveedor) {
         this.id = id;
         this.fecha_entrega = fechaEsperadaEntrega;
@@ -36,11 +38,11 @@ public class OrdenCompra {
     public OrdenCompra() 
     {;}
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

@@ -1,17 +1,19 @@
 package uniandes.edu.co.demo.modelo;
 
 import org.springframework.data.annotation.Id;
+import org.bson.types.ObjectId;
+
 
 public class Ciudad {
 
     @Id
-    private int id;
+    private ObjectId id;
 
     private int codigo;
     
     private String nombre;
 
-    public Ciudad(int id, int codigo, String nombre) {
+    public Ciudad(ObjectId id, int codigo, String nombre) {
         this.id = id;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -20,11 +22,11 @@ public class Ciudad {
     public Ciudad() 
     {;}
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

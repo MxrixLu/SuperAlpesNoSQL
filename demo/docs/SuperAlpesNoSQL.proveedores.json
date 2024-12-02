@@ -1,6 +1,6 @@
 [{
   "_id": 1,
-  "NIT": "900123456-7",
+  "nit": "900123456-7",
   "direccion": "Calle 123 #45-67, Bogotá",
   "contacto": {
     "nombre": "Carlos Pérez",
@@ -14,7 +14,7 @@
 },
 {
   "_id": 2,
-  "NIT": "800987654-2",
+  "nit": "800987654-2",
   "direccion": "Carrera 10 #20-30, Medellín",
   "contacto": {
     "nombre": "María Gómez",
@@ -28,7 +28,7 @@
 },
 {
   "_id": 3,
-  "NIT": "700456123-8",
+  "nit": "700456123-8",
   "direccion": "Avenida Principal #12-34, Cali",
   "contacto": {
     "nombre": "Juan Rodríguez",
@@ -42,7 +42,7 @@
 },
 {
   "_id": 4,
-  "NIT": "600321654-3",
+  "nit": "600321654-3",
   "direccion": "Diagonal 45 #67-89, Barranquilla",
   "contacto": {
     "nombre": "Ana Martínez",
@@ -56,7 +56,7 @@
 },
 {
   "_id": 5,
-  "NIT": "500789123-1",
+  "nit": "500789123-1",
   "direccion": "Transversal 30 #40-50, Cartagena",
   "contacto": {
     "nombre": "Pedro López",

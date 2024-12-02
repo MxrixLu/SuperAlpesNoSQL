@@ -2,6 +2,7 @@ package uniandes.edu.co.demo.repository;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.Update;
@@ -11,7 +12,7 @@ import uniandes.edu.co.demo.modelo.Bodega;
 import uniandes.edu.co.demo.modelo.Sucursal;
 
 @Repository
-public interface SucursalRepository extends MongoRepository<Sucursal, Integer> {
+public interface SucursalRepository extends MongoRepository<Sucursal, ObjectId> {
 
     default void insertarSucursal(String nombre, String direccion, String telefono, String ciudad, List<Bodega> bodegas){
         Sucursal sucursal = new Sucursal();
@@ -34,7 +35,7 @@ public interface SucursalRepository extends MongoRepository<Sucursal, Integer> {
     //Eliminar una bodega
     @Query("{ 'nombre': ?0 }")
     @Update("{$pull:{items:{'nombre': ?1}}}")
-    void eliminarBodega(String nombreSucursal, String bodegaId);
+    void eliminarBodega(String nombreSucursal, String bodega_id);
 
     
 }

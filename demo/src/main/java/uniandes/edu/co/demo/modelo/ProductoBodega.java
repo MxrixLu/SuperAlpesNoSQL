@@ -2,13 +2,13 @@ package uniandes.edu.co.demo.modelo;
 
 public class ProductoBodega {
 
-    private Integer nombre_producto;
+    private String nombre_producto;
     private int cantidad;
     private int nivlReorden; 
     private Double costo_promedio;
     private int capacidad_bodega;
 
-    public ProductoBodega(Integer nombre_producto, int cantidad, int nivlReorden, Double costo_promedio, int capacidad_bodega) {
+    public ProductoBodega(String nombre_producto, int cantidad, int nivlReorden, Double costo_promedio, int capacidad_bodega) {
         this.nombre_producto = nombre_producto;
         this.cantidad = cantidad;
         this.nivlReorden = nivlReorden;
@@ -19,11 +19,11 @@ public class ProductoBodega {
     public ProductoBodega() {
     }
 
-    public Integer getNombreProducto() {
+    public String getNombreProducto() {
         return nombre_producto;
     }
 
-    public void setNombreProducto(Integer nombre_producto) {
+    public void setNombreProducto(String nombre_producto) {
         this.nombre_producto = nombre_producto;
     }
 

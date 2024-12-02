@@ -1,6 +1,8 @@
 package uniandes.edu.co.demo.modelo;
 
 import java.util.List;
+import org.bson.types.ObjectId;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,32 +14,32 @@ import lombok.ToString;
 public class Sucursal {
 
     @Id
-    private int id;
+    private ObjectId id;
 
     private String nombre; 
     private String telefono; 
     private String direccion;
-    private Double tamano; 
+    private Double tamaño; 
     private String ciudad;
     private List<Bodega> bodegas;
 
-    public Sucursal(int id, String nombre, String telefono, String direccion, Double tamano, String ciudad, List<Bodega> bodegas) {
+    public Sucursal(ObjectId id, String nombre, String telefono, String direccion, Double tamaño, String ciudad, List<Bodega> bodegas) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.tamano = tamano;
+        this.tamaño = tamaño;
         this.ciudad = ciudad;
         this.bodegas = bodegas;
     }
 
     public Sucursal() {;}
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -65,12 +67,12 @@ public class Sucursal {
         this.direccion = direccion;
     }
 
-    public Double getTamano() {
-        return tamano;
+    public Double getTamaño() {
+        return tamaño;
     }
 
-    public void setTamano(Double tamano) {
-        this.tamano = tamano;
+    public void setTamaño(Double tamaño) {
+        this.tamaño = tamaño;
     }
 
     public String getCiudad() {

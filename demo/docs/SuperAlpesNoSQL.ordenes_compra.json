@@ -14,12 +14,12 @@
     {
       "productoId": 1001,
       "cantidad": 50,
-      "precioUnitario": 1000
+      "precio_unitario": 1000
     },
     {
       "productoId": 1002,
       "cantidad": 20,
-      "precioUnitario": 1500
+      "precio_unitario": 1500
     }
   ]
 },
@@ -39,12 +39,12 @@
     {
       "productoId": 1003,
       "cantidad": 10,
-      "precioUnitario": 3000
+      "precio_unitario": 3000
     },
     {
       "productoId": 1004,
       "cantidad": 5,
-      "precioUnitario": 4000
+      "precio_unitario": 4000
     }
   ]
 },
@@ -64,12 +64,12 @@
     {
       "productoId": 1005,
       "cantidad": 15,
-      "precioUnitario": 2000
+      "precio_unitario": 2000
     },
     {
       "productoId": 1006,
       "cantidad": 25,
-      "precioUnitario": 2500
+      "precio_unitario": 2500
     }
   ]
 },
@@ -89,12 +89,12 @@
     {
       "productoId": 1007,
       "cantidad": 30,
-      "precioUnitario": 1500
+      "precio_unitario": 1500
     },
     {
       "productoId": 1008,
       "cantidad": 40,
-      "precioUnitario": 1800
+      "precio_unitario": 1800
     }
   ]
 },
@@ -114,12 +114,12 @@
     {
       "productoId": 1009,
       "cantidad": 20,
-      "precioUnitario": 2500
+      "precio_unitario": 2500
     },
     {
       "productoId": 1010,
       "cantidad": 10,
-      "precioUnitario": 3000
+      "precio_unitario": 3000
     }
   ]
 }]

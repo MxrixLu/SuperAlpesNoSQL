@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"_id\": 10,\r\n  \"codigo\": \"D001\",\r\n  \"nombre\": \"Comida Gats\",\r\n  \"descripcion\": \"Productos destinados al consumo gatuno.\",\r\n  \"caracteristica_almacenamiento\": \"Mantener en lugar fresco y seco.\"\r\n}",
+							"raw": "{\r\n  \"codigo\": \"D001\",\r\n  \"nombre\": \"Comida Gats\",\r\n  \"descripcion\": \"Productos destinados al consumo gatuno.\",\r\n  \"caracteristicas_almacenamiento\": \"Mantener en lugar fresco y seco.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,7 +44,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/categorias/obtener/{{categoria}}",
+							"raw": "http://localhost:8080/categorias/obtener/Perecederos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -53,7 +53,7 @@
 							"path": [
 								"categorias",
 								"obtener",
-								"{{categoria}}"
+								"Perecederos"
 							]
 						}
 					},
@@ -65,7 +65,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/categorias/obtener/cod/C001",
+							"raw": "http://localhost:8080/categorias/obtener/cod/CAT002",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -75,7 +75,7 @@
 								"categorias",
 								"obtener",
 								"cod",
-								"C001"
+								"CAT002"
 							]
 						}
 					},
@@ -93,7 +93,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"codigo_barras\": \"A123456789\",\r\n  \"nombre\": \"Laptop Dell XPS 13\",\r\n  \"costo_bodega\": 500.00,\r\n  \"precio_venta\": 800.00,\r\n  \"presentacion\": \"Unidad\",\r\n  \"cantidad_presentacion\": 1.0,\r\n  \"unidad_medida\": 1,\r\n  \"especificaciones\": {\r\n    \"volumen_empaque\": 300.3, \r\n    \"peso_empaque\": 20.0\r\n  },\r\n  \"fecha_expiracion\": \"2025-12-31\",\r\n  \"categoria\": \"Electrónica\"\r\n}\r\n",
+							"raw": "{\r\n  \"_id\": {\r\n    \"$oid\": \"65f234abyd5678ef90123456\"\r\n  },\r\n  \"nombre\": \"Carne\",\r\n  \"precio_unitario\": 2.5,\r\n  \"categoria_id\": {\r\n    \"$oid\": \"65f123456789abcdef012345\"\r\n  },\r\n  \"especificacion_empaque\": {\r\n    \"volumen\": 1000,\r\n    \"peso\": 1050\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,7 +121,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/productos/obtener/cod/P004",
+							"raw": "http://localhost:8080/productos/obtener/cod/P999",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -131,7 +131,7 @@
 								"productos",
 								"obtener",
 								"cod",
-								"P004"
+								"P999"
 							]
 						}
 					},
@@ -143,7 +143,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/productos/obtener/nom/Agua",
+							"raw": "http://localhost:8080/productos/obtener/nom/Yogur",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -153,7 +153,7 @@
 								"productos",
 								"obtener",
 								"nom",
-								"Agua"
+								"Yogur"
 							]
 						}
 					},
@@ -195,7 +195,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/productos/caracteristicas?precioInicial=10&precioFinal=30&fechaVencimientoMax=2024-12-31&sucursal=Sucursal Centro&categoria=1",
+							"raw": "http://localhost:8080/productos/caracteristicas?precioInicial=10&precioFinal=30&fechaVencimientoMax=2024-12-31&sucursal=Sucursal Centro&categoria=65f123456789abcdef012345",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,7 +224,7 @@
 								},
 								{
 									"key": "categoria",
-									"value": "1"
+									"value": "65f123456789abcdef012345"
 								}
 							]
 						}
@@ -243,7 +243,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"NIT\": \"9001234567\",\r\n  \"direccion\": \"Calle 123, Bogotá, Colombia\",\r\n  \"contacto\": {\r\n    \"nombre\": \"Juan Pérez\",\r\n    \"telefono\": \"3001234567\"\r\n  },\r\n  \"productos\": [\r\n    \"Producto1\",\r\n    \"Producto2\",\r\n    \"Producto3\"\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"nit\": \"9001234567\",\r\n  \"nombre\": \"Hola\",\r\n  \"direccion\": \"Calle 123, Bogotá, Colombia\",\r\n  \"contacto\": {\r\n    \"nombre\": \"Juan Pérez\",\r\n    \"telefono\": \"3001234567\"\r\n  },\r\n  \"productos_suministrados\": [\r\n    { \"$_id\": \"603d9f1e8e8b6d3be2f7a7b1\"},\r\n    { \"$_id\": \"603d9f1e8e8b6d3be2f7a7b2\"},\r\n    { \"$_id\": \"603d9f1e8e8b6d3be2f7a7b3\"}  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -307,7 +307,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 1,\r\n  \"nombre\": \"Sucursal Centro\",\r\n  \"telefono\": \"3009876543\",\r\n  \"direccion\": \"Carrera 10 # 20-30, Bogotá, Colombia\",\r\n  \"tamano\": 500.5,\r\n  \"ciudad\": \"Bogotá\",\r\n  \"bodegas\": [\r\n    {\r\n      \"id\": 1,\r\n      \"nombre\": \"Bodega Principal\",\r\n      \"tamano\": 200.5\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"nombre\": \"Bodega Secundaria\",\r\n      \"tamano\": 150.0\r\n    }\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"_id\": {\r\n    \"$oid\": \"4326473627\"\r\n  },\r\n  \"nombre\": \"Sucursal Occidente\",\r\n  \"ciudad\": \"Bogotá\",\r\n  \"direccion\": \"Calle 10 #20-30\",\r\n  \"telefono\": \"3011234567\",\r\n  \"bodegas\": [\r\n    \r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -2,7 +2,7 @@
   "_id": 1,
   "nombre": "Leche Entera",
   "costo_base": 15,
-  "precio_venta": 20,
+  "precio_unitario": 20,
   "presentacion": "1L",
   "cantidad": 500,
   "unidad_medida": "Litro",
@@ -20,7 +20,7 @@
   "_id": 2,
   "nombre": "Televisor LED",
   "costo_base": 5000,
-  "precio_venta": 7000,
+  "precio_unitario": 7000,
   "presentacion": "Caja",
   "cantidad": 50,
   "unidad_medida": "Unidad",
@@ -36,7 +36,7 @@
   "_id": 3,
   "nombre": "Agua",
   "costo_base": 5,
-  "precio_venta": 10,
+  "precio_unitario": 10,
   "presentacion": "500ml",
   "cantidad": 1000,
   "unidad_medida": "Litro",
@@ -54,7 +54,7 @@
   "_id": 4,
   "nombre": "Silla de Oficina",
   "costo_base": 800,
-  "precio_venta": 1200,
+  "precio_unitario": 1200,
   "presentacion": "Unidad",
   "cantidad": 100,
   "unidad_medida": "Unidad",
@@ -70,7 +70,7 @@
   "_id": 5,
   "nombre": "Camisa Casual",
   "costo_base": 200,
-  "precio_venta": 350,
+  "precio_unitario": 350,
   "presentacion": "Unidad",
   "cantidad": 300,
   "unidad_medida": "Unidad",
@@ -87,9 +87,9 @@
   "nombre": "Laptop Dell XPS 13",
   "presentacion": "Unidad",
   "unidad_medida": 0,
-  "especificaciones": {
-    "volumen_empaque": 300.3,
-    "peso_empaque": 20
+  "especificacion_empaque": {
+    "volumen": 300.3,
+    "peso": 20
   },
   "categoria": "Electrónica",
   "_class": "uniandes.edu.co.demo.modelo.Producto"

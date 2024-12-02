@@ -65,10 +65,10 @@ public class SucursalController {
     }
 
     //Eliminar Bodega
-    @DeleteMapping("/{sucursalId}/bodegas/{bodegaId}/delete")
-    public ResponseEntity<String> eliminarBodega(@PathVariable("sucursalId") String sucursalId, @PathVariable("bodegaId") String bodegaId) {
+    @DeleteMapping("/{sucursalId}/bodegas/{bodega_id}/delete")
+    public ResponseEntity<String> eliminarBodega(@PathVariable("sucursalId") String sucursalId, @PathVariable("bodega_id") String bodega_id) {
         try {
-            sucursalRepository.eliminarBodega(sucursalId, bodegaId);
+            sucursalRepository.eliminarBodega(sucursalId, bodega_id);
             return new ResponseEntity<>("Bodega eliminada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al eliminar la bodega: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

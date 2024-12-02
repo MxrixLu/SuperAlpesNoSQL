@@ -2,6 +2,7 @@ package uniandes.edu.co.demo.modelo;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 import lombok.ToString;
@@ -10,15 +11,15 @@ import lombok.ToString;
 public class Bodega {
 
     @Id
-    private int id;
+    private ObjectId bodega_id;
     private String nombre;
-    private Double tamano;
+    private Double tamaño;
     private List<ProductoBodega> productos;
 
-    public Bodega(int id, String nombre, Double tamano, List<ProductoBodega> productos) {
-        this.id = id;
+    public Bodega(ObjectId bodega_id, String nombre, Double tamaño, List<ProductoBodega> productos) {
+        this.bodega_id = bodega_id;
         this.nombre = nombre;
-        this.tamano = tamano;
+        this.tamaño = tamaño;
         this.productos = productos;
     }
 
@@ -26,12 +27,12 @@ public class Bodega {
     public Bodega() 
     {;}
     
-    public int getId() {
-        return id;
+    public ObjectId getBodega_id() {
+        return bodega_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBodega_id(ObjectId bodega_id) {
+        this.bodega_id = bodega_id;
     }
 
     public String getNombre() {
@@ -42,12 +43,12 @@ public class Bodega {
         this.nombre = nombre;
     }
 
-    public Double getTamano() {
-        return tamano;
+    public Double getTamaño() {
+        return tamaño;
     }
 
-    public void setTamano(Double tamano) {
-        this.tamano = tamano;
+    public void setTamaño(Double tamaño) {
+        this.tamaño = tamaño;
     }
 
     public List<ProductoBodega> getProductos() {

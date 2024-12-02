@@ -1,23 +1,25 @@
 package uniandes.edu.co.demo.modelo;
 
-public class DetalleOrdenCompra {
-    public int productoId;
-    public int cantidad;
-    public int precioUnitario;
+import org.bson.types.ObjectId;
 
-    public DetalleOrdenCompra(int productoId, int cantidad, int precioUnitario) {
+public class DetalleOrdenCompra {
+    public ObjectId productoId;
+    public int cantidad;
+    public int precio_unitario;
+
+    public DetalleOrdenCompra(ObjectId productoId, int cantidad, int precio_unitario) {
         this.productoId = productoId;
         this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
+        this.precio_unitario = precio_unitario;
     }
 
     public DetalleOrdenCompra() {
     }
-    public int getProductoId() {
+    public ObjectId getProductoId() {
         return productoId;
     }
     
-    public void setProductoId(int productoId) {
+    public void setProductoId(ObjectId productoId) {
         this.productoId = productoId;
     }
 
@@ -29,12 +31,12 @@ public class DetalleOrdenCompra {
         this.cantidad = cantidad;
     }
 
-    public int getPrecioUnitario() {
-        return precioUnitario;
+    public int getprecio_unitario() {
+        return precio_unitario;
     }
 
-    public void setPrecioUnitario(int precioUnitario) {
-        this.precioUnitario = precioUnitario;
+    public void setprecio_unitario(int precio_unitario) {
+        this.precio_unitario = precio_unitario;
     }
 
 }

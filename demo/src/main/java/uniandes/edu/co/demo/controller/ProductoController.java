@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class ProductoController {
     @PostMapping("/nuevo")
     public ResponseEntity<String> crearProducto(@RequestBody Producto producto) {
         try{
-            productoRepository.insertarProducto( producto.getCodigoBarras(), producto.getNombre(), producto.getCostoBodega(), producto.getPrecioVenta(), producto.getPresentacion(), producto.getCantidadPresentacion(), producto.getUnidadMedida(), producto.getEspecificaciones(), producto.getFechaExpiracion(), producto.getCategoria());
+            productoRepository.insertarProducto( producto.getCodigoBarras(), producto.getNombre(), producto.getCostoBodega(), producto.getprecio_unitario(), producto.getPresentacion(), producto.getCantidadPresentacion(), producto.getUnidadMedida(), producto.getespecificacion_empaque(), producto.getFechaExpiracion(), producto.getCategoria_id());
             return ResponseEntity.ok("Producto creado exitosamente");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error al crear el producto: " + e.getMessage());
@@ -44,12 +45,12 @@ public class ProductoController {
 
     @GetMapping("/obtener/cod/{codigo}")
     public ResponseEntity<Producto> obtenerProductoPorCodigo(@PathVariable("codigo") String codigo) {
-        try{
+        // try{
             Producto producto = productoRepository.obtenerProductoPorCodigo(codigo);
             return new ResponseEntity<>(producto, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);
+        // }
     }
 
     @GetMapping("/obtener/nom/{nombre}")
@@ -66,7 +67,7 @@ public class ProductoController {
     @PutMapping("/actualizar/{codigo}")
     public ResponseEntity<String> actualizarProducto(@PathVariable("codigo") String codigo, @RequestBody Producto producto) {
         try{
-             productoRepository.actualizarProductoCodigo(codigo, producto.getNombre(), producto.getCostoBodega(), producto.getPrecioVenta(), producto.getPresentacion(), producto.getCantidadPresentacion(), producto.getUnidadMedida(), producto.getEspecificaciones(), producto.getFechaExpiracion(), producto.getCategoria());
+             productoRepository.actualizarProductoCodigo(codigo, producto.getNombre(), producto.getCostoBodega(), producto.getprecio_unitario(), producto.getPresentacion(), producto.getCantidadPresentacion(), producto.getUnidadMedida(), producto.getespecificacion_empaque(), producto.getFechaExpiracion(), producto.getCategoria_id());
             return ResponseEntity.ok("Producto actualizado exitosamente");
         } catch (Exception e) {
             return new ResponseEntity<>(null , HttpStatus.INTERNAL_SERVER_ERROR);
@@ -74,11 +75,11 @@ public class ProductoController {
     }
 
     @GetMapping("/caracteristicas")
-    public ResponseEntity<List<Document>> obtenerProductosSegunCaracteristicas(@RequestParam(required = false) int precioInicial, @RequestParam(required = false) int precioFinal, @RequestParam(required = false) String fechaVencimientoMax, @RequestParam(required = false) String sucursal, @RequestParam(required = false) int categoria) {
+    public ResponseEntity<List<Document>> obtenerProductosSegunCaracteristicas(@RequestParam(required = false) int precioInicial, @RequestParam(required = false) int precioFinal, @RequestParam(required = false) String fechaVencimientoMax, @RequestParam(required = false) String sucursal, @RequestParam(required = false) ObjectId categoria) {
         try{
             System.out.println("Fecha: " + fechaVencimientoMax);
             System.out.println("Sucursal: " + sucursal);
-            System.out.println("Categoria: " + categoria);
+            System.out.println("Categoria_id: " + categoria);
             System.out.println("Precio inicial: " + precioInicial);
             System.out.println("Precio final: " + precioFinal);
 

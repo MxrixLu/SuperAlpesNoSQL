@@ -6,9 +6,9 @@
   "telefono": "555-123-4567",
   "bodegas": [
     {
-      "bodegaId": 101,
+      "bodega_id": 101,
       "nombre": "Bodega A",
-      "tamano": "Grande",
+      "tamaño": "Grande",
       "productos": [
         {
           "productoId": 1,
@@ -27,9 +27,9 @@
       ]
     },
     {
-      "bodegaId": 102,
+      "bodega_id": 102,
       "nombre": "Bodega B",
-      "tamano": "Mediana",
+      "tamaño": "Mediana",
       "productos": [
         {
           "productoId": 3,
@@ -50,9 +50,9 @@
   "telefono": "818-987-6543",
   "bodegas": [
     {
-      "bodegaId": 201,
+      "bodega_id": 201,
       "nombre": "Bodega Norte A",
-      "tamano": "Grande",
+      "tamaño": "Grande",
       "productos": [
         {
           "productoId": 4,
@@ -73,9 +73,9 @@
   "telefono": "333-654-9876",
   "bodegas": [
     {
-      "bodegaId": 301,
+      "bodega_id": 301,
       "nombre": "Bodega Sur A",
-      "tamano": "Pequeña",
+      "tamaño": "Pequeña",
       "productos": [
         {
           "productoId": 5,
@@ -96,9 +96,9 @@
   "telefono": "222-101-2020",
   "bodegas": [
     {
-      "bodegaId": 401,
+      "bodega_id": 401,
       "nombre": "Bodega Este A",
-      "tamano": "Mediana",
+      "tamaño": "Mediana",
       "productos": [
         {
           "productoId": 6,
@@ -119,9 +119,9 @@
   "telefono": "664-202-3030",
   "bodegas": [
     {
-      "bodegaId": 501,
+      "bodega_id": 501,
       "nombre": "Bodega Oeste A",
-      "tamano": "Grande",
+      "tamaño": "Grande",
       "productos": [
         {
           "productoId": 7,
@@ -149,9 +149,9 @@
   "telefono": "477-303-4040",
   "bodegas": [
     {
-      "bodegaId": 601,
+      "bodega_id": 601,
       "nombre": "Bodega Central A",
-      "tamano": "Grande",
+      "tamaño": "Grande",
       "productos": [
         {
           "productoId": 9,
@@ -172,9 +172,9 @@
   "telefono": "442-404-5050",
   "bodegas": [
     {
-      "bodegaId": 701,
+      "bodega_id": 701,
       "nombre": "Bodega Alta A",
-      "tamano": "Pequeña",
+      "tamaño": "Pequeña",
       "productos": [
         {
           "productoId": 10,
@@ -197,12 +197,12 @@
     {
       "_id": 1,
       "nombre": "Bodega Principal",
-      "tamano": 200.5
+      "tamaño": 200.5
     },
     {
       "_id": 2,
       "nombre": "Bodega Secundaria",
-      "tamano": 150
+      "tamaño": 150
     }
   ],
   "_class": "uniandes.edu.co.demo.modelo.Sucursal"

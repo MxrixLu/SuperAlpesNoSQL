@@ -3,6 +3,8 @@ package uniandes.edu.co.demo.repository;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import org.bson.types.ObjectId;
+
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -12,11 +14,11 @@ import uniandes.edu.co.demo.modelo.DetalleOrdenCompra;
 import uniandes.edu.co.demo.modelo.OrdenCompra;
 
 @Repository
-public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, Integer> {
+public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, ObjectId> {
 
     // Crear un nuevo bar
 
-    default void insertarOrden(int sucursalId, int proveedorId, Date fecha_entrega, List<Integer> productos, List<Integer> cantidades, List<Integer> precios){
+    default void insertarOrden(int sucursalId, int proveedorId, Date fecha_entrega, List<ObjectId> productos, List<Integer> cantidades, List<Integer> precios){
         OrdenCompra orden = new OrdenCompra();
         orden.setSucursal(sucursalId);
         orden.setProveedor(proveedorId);
@@ -28,7 +30,7 @@ public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, Inte
         for(int i = 0; i < productos.size(); i++){
             detalleOrden.setProductoId(productos.get(i));
             detalleOrden.setCantidad(cantidades.get(i));
-            detalleOrden.setPrecioUnitario(precios.get(i));
+            detalleOrden.setprecio_unitario(precios.get(i));
             detalles.add(detalleOrden);
         }
         orden.setDetallesOrdenCompra(detalles);
@@ -38,6 +40,6 @@ public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, Inte
 
     // Encontrar por id
     @Query("{id: ?0}")
-    OrdenCompra obtenerOrdenPorId(int id);
+    OrdenCompra obtenerOrdenPorId(ObjectId id);
     
 }

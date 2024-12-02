@@ -1,6 +1,7 @@
 package uniandes.edu.co.demo.modelo;
 
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,13 +12,13 @@ import lombok.ToString;
 public class Categoria {
 
     @Id
-    private int id;
+    private ObjectId id; 
     private String codigo;
     private String nombre; 
     private String descripcion;
     private String caracteristicas_almacenamiento;
 
-    public Categoria(int id, String codigo, String nombre, String descripcion,
+    public Categoria(ObjectId id, String codigo, String nombre, String descripcion,
             String caracteristicas_almacenamiento) {
         this.id = id;
         this.codigo = codigo;
@@ -29,11 +30,11 @@ public class Categoria {
     public Categoria() 
     {;}
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

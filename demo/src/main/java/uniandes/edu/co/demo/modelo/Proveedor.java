@@ -1,5 +1,6 @@
 package uniandes.edu.co.demo.modelo;
 
+import org.bson.types.ObjectId;
 
 import java.util.List;
 
@@ -14,38 +15,40 @@ import lombok.ToString;
 public class Proveedor {
 
     @Id
-    private int id;
+    private ObjectId id;
 
-    private String NIT; 
+    private String nit; 
+    private String nombre;
     private String direccion;
     private Contacto contacto;
-    private List<String> productos;
+    private List<ObjectId> productos_suministrados;
 
-    public Proveedor(int id, String nIT, String direccion, Contacto contacto, List<String> productos) {
+    public Proveedor(ObjectId id, String nit, String nombre,  String direccion, Contacto contacto, List<ObjectId> productos_suministrados) {
         this.id = id;
-        this.NIT = nIT;
+        this.nombre = nombre;
+        this.nit = nit;
         this.direccion = direccion;
         this.contacto = contacto;
-        this.productos = productos;
+        this.productos_suministrados = productos_suministrados;
     } 
     
     public Proveedor() 
     {;}
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
-    public String getNIT() {
-        return NIT;
+    public String getNit() {
+        return nit;
     }
 
-    public void setNIT(String nIT) {
-        this.NIT = nIT;
+    public void setNit(String nit) {
+        this.nit = nit;
     }
 
     public String getDireccion() {
@@ -64,12 +67,19 @@ public class Proveedor {
         this.contacto = contacto;
     }
 
-    public List<String> getProductos() {
-        return productos;
+    public List<ObjectId> getProductos_suministrados() {
+        return productos_suministrados;
     }
 
-    public void setProductos(List<String> productos) {
-        this.productos = productos;
+    public void setProductos_suministrados(List<ObjectId> productos_suministrados) {
+        this.productos_suministrados = productos_suministrados;
     }
     
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
