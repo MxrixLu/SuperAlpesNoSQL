@@ -11,15 +11,12 @@
 			"item": [
 				{
 					"name": "Crear Categoria",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 1,\r\n  \"codigo\": 1001,\r\n  \"nombre\": \"Electrónica\",\r\n  \"descripcion\": \"Categoría que agrupa productos relacionados con tecnología y gadgets.\",\r\n  \"caracteristicas_almacenamiento\": \"Requiere almacenamiento en espacios frescos y secos, evitando humedad y temperaturas extremas.\"\r\n}\r\n",
+							"raw": "{\r\n  \"_id\": 10,\r\n  \"codigo\": \"D001\",\r\n  \"nombre\": \"Comida Gats\",\r\n  \"descripcion\": \"Productos destinados al consumo gatuno.\",\r\n  \"caracteristica_almacenamiento\": \"Mantener en lugar fresco y seco.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -27,7 +24,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/categorias/nuevo",
+							"raw": "http://localhost:8080/categorias/new",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -35,7 +32,7 @@
 							"port": "8080",
 							"path": [
 								"categorias",
-								"nuevo"
+								"new"
 							]
 						}
 					},
@@ -47,7 +44,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/categorias/\"perecederos\"",
+							"raw": "http://localhost:8080/categorias/obtener/{{categoria}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,7 +52,8 @@
 							"port": "8080",
 							"path": [
 								"categorias",
-								"\"perecederos\""
+								"obtener",
+								"{{categoria}}"
 							]
 						}
 					},
@@ -67,15 +65,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/categoria/1001",
+							"raw": "http://localhost:8080/categorias/obtener/cod/C001",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"categoria",
-								"1001"
+								"categorias",
+								"obtener",
+								"cod",
+								"C001"
 							]
 						}
 					},
@@ -88,11 +88,8 @@
 			"item": [
 				{
 					"name": "Crear Producto",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -124,7 +121,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/productos/\"A123456789\"",
+							"raw": "http://localhost:8080/productos/obtener/cod/P004",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -132,7 +129,9 @@
 							"port": "8080",
 							"path": [
 								"productos",
-								"\"A123456789\""
+								"obtener",
+								"cod",
+								"P004"
 							]
 						}
 					},
@@ -144,15 +143,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/producto/\"Laptop Dell XPS 13\"",
+							"raw": "http://localhost:8080/productos/obtener/nom/Agua",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"producto",
-								"\"Laptop Dell XPS 13\""
+								"productos",
+								"obtener",
+								"nom",
+								"Agua"
 							]
 						}
 					},
@@ -160,11 +161,8 @@
 				},
 				{
 					"name": "Actualizar Producto",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -176,7 +174,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/productos/actualizar/\"A123456789\"",
+							"raw": "http://localhost:8080/productos/actualizar/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -185,7 +183,49 @@
 							"path": [
 								"productos",
 								"actualizar",
-								"\"A123456789\""
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductoPorCaracteristicas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/caracteristicas?precioInicial=10&precioFinal=30&fechaVencimientoMax=2024-12-31&sucursal=Sucursal Centro&categoria=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"caracteristicas"
+							],
+							"query": [
+								{
+									"key": "precioInicial",
+									"value": "10"
+								},
+								{
+									"key": "precioFinal",
+									"value": "30"
+								},
+								{
+									"key": "fechaVencimientoMax",
+									"value": "2024-12-31"
+								},
+								{
+									"key": "sucursal",
+									"value": "Sucursal Centro"
+								},
+								{
+									"key": "categoria",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -198,11 +238,8 @@
 			"item": [
 				{
 					"name": "Crear Proveedor",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -214,14 +251,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/proveedor/nuevo",
+							"raw": "http://localhost:8080/proveedores/nuevo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"proveedor",
+								"proveedores",
 								"nuevo"
 							]
 						}
@@ -230,11 +267,8 @@
 				},
 				{
 					"name": "Actualizar Proveedor",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -246,7 +280,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/proveedores/actualizar/1",
+							"raw": "http://localhost:8080/proveedores/actualizar/9432A473",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -255,7 +289,7 @@
 							"path": [
 								"proveedores",
 								"actualizar",
-								"1"
+								"9432A473"
 							]
 						}
 					},
@@ -268,11 +302,8 @@
 			"item": [
 				{
 					"name": "Crear Sucursal",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -300,11 +331,8 @@
 				},
 				{
 					"name": "Crear Bodega",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -335,7 +363,7 @@
 				{
 					"name": "Eliminar Bodega",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:8080/sucursales/1/bodegas/2/delete",
@@ -350,6 +378,27 @@
 								"bodegas",
 								"2",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sucursales/caracteristicas/Sucursal Centro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sucursales",
+								"caracteristicas",
+								"Sucursal Centro"
 							]
 						}
 					},

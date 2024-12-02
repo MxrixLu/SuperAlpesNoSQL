@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +32,7 @@ public class SucursalController {
     @PostMapping("/nuevo")
      public ResponseEntity<String> crearSucursal(@RequestBody Sucursal sucursal) {
         try {
-            sucursalRepository.insertarSucursal(sucursal.getNombre(), sucursal.getTelefono(), sucursal.getDireccion(), sucursal.getTamano(), sucursal.getCiudad(), sucursal.getBodegas());
+            sucursalRepository.insertarSucursal(sucursal.getNombre(), sucursal.getDireccion(), sucursal.getTelefono(), sucursal.getCiudad(), sucursal.getBodegas());
             return new ResponseEntity<>("Sucursal creada exitosamente", HttpStatus.CREATED);
         } catch (Exception e) {;
             return new ResponseEntity<>("Error al crear la sucursal: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -76,10 +75,10 @@ public class SucursalController {
         }
     }
 
-    @GetMapping("/caracteristicas")
-    public ResponseEntity<List<Document>> obtenerInventarioSucursales(String nombreSucursal) {
+    @GetMapping("/caracteristicas/{sucursal}")
+    public ResponseEntity<List<Document>> obtenerInventarioSucursales(@PathVariable String sucursal) {
         try {
-            List<Document> sucursales = sucursalRepositoryCustom.inventarioSucursal(nombreSucursal);
+            List<Document> sucursales = sucursalRepositoryCustom.inventarioSucursal(sucursal);
             return new ResponseEntity<>(sucursales, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

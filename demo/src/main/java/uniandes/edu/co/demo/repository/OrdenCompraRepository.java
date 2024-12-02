@@ -6,10 +6,12 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import uniandes.edu.co.demo.modelo.DetalleOrdenCompra;
 import uniandes.edu.co.demo.modelo.OrdenCompra;
 
+@Repository
 public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, Integer> {
 
     // Crear un nuevo bar

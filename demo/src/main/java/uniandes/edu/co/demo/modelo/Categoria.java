@@ -12,12 +12,12 @@ public class Categoria {
 
     @Id
     private int id;
-    private int codigo;
+    private String codigo;
     private String nombre; 
     private String descripcion;
     private String caracteristicas_almacenamiento;
 
-    public Categoria(int id, int codigo, String nombre, String descripcion,
+    public Categoria(int id, String codigo, String nombre, String descripcion,
             String caracteristicas_almacenamiento) {
         this.id = id;
         this.codigo = codigo;
@@ -37,11 +37,11 @@ public class Categoria {
         this.id = id;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -72,3 +72,5 @@ public class Categoria {
     
 
 }
+
+
