@@ -18,7 +18,7 @@ public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, Obje
 
     // Crear un nuevo bar
 
-    default void insertarOrden(int sucursalId, int proveedorId, Date fecha_entrega, List<ObjectId> productos, List<Integer> cantidades, List<Integer> precios){
+    default void insertarOrden(ObjectId sucursalId, ObjectId proveedorId, Date fecha_entrega, List<ObjectId> productos, List<Integer> cantidades, List<Integer> precios){
         OrdenCompra orden = new OrdenCompra();
         orden.setSucursal(sucursalId);
         orden.setProveedor(proveedorId);
